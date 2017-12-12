@@ -1,4 +1,5 @@
 //setup
+docker pull docker.bintray.io/jfrog/artifactory-oss:latest
 docker volume create --name artifactory_volume
 docker run --name artifactory -d -v artifactory_data:/var/opt/jfrog/artifactory -p 8081:8081 docker.bintray.io/jfrog/artifactory-oss:latest
 curl -u admin:password -X POST -H "Content-type:application/xml" --data-binary @artifactory.config.xml http://localhost:8081/artifactory/api/system/configuration
