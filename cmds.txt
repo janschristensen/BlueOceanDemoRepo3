@@ -6,6 +6,7 @@ curl -u admin:password -X POST -H "Content-type:application/xml" --data-binary @
 
 //tear down
 docker stop artifactory
+docker container rm artifactory
 docker volume remove artifactory_volume
 
 //make new backup
